@@ -1,6 +1,5 @@
 package kiosk.lv_2;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -41,7 +40,7 @@ public class Main {
             } else {
                 System.out.println("존재하지 않는 메뉴 번호입니다.");
             }
-//            break;
+            break;
         }
     }
 }
