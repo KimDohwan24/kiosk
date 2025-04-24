@@ -26,8 +26,5 @@ public class MenuItem {
     public String printList(Menu menu) {
         return menu.getName() + " | " + "$ " + menu.getPrice() + " | " + menu.getDescription();
     }
-
-
-    // 햄버거 메뉴 출력문
 }
 
