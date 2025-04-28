@@ -47,7 +47,6 @@ public class Kiosk {
                 continue;
             }
             if (categoryChoice == -2) {
-                handleCheckout();  // 결제 처리 메서드로 분리
                 continue;
             }
             if (categoryChoice < 1 || categoryChoice > menus.size()) {
@@ -100,46 +99,5 @@ public class Kiosk {
                 continue;
             }
         }
-    }
-
-    // 결제 처리 메서드
-    private void handleCheckout() {
-        if (basket.getItems().isEmpty()) {
-            System.out.println("장바구니에 물건이 없습니다. 결제할 수 없습니다.");
-            return;
-        }
-
-        // 할인율 선택
-        System.out.println("\n할인 정보를 입력해주세요.");
-        System.out.println("1. 국가유공자 : 10% 할인");
-        System.out.println("2. 군인     : 5% 할인");
-        System.out.println("3. 학생     : 3% 할인");
-        System.out.println("4. 일반     : 0% 할인");
-        System.out.print("번호를 선택하세요: ");
-
-        int discountChoice;
-        try {
-            discountChoice = scan.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("잘못된 입력입니다. 할인 번호를 다시 입력하세요.");
-            scan.nextLine();
-            return; // 잘못된 입력으로 종료
-        }
-
-        DiscountType discountType = DiscountType.fromNumber(discountChoice);
-        if (discountType == null) {
-            System.out.println("잘못된 할인 번호입니다.");
-            return;
-        }
-
-        // 할인율 계산
-        double totalPrice = basket.getTotalPrice();
-        double discountedPrice = totalPrice * (1 - discountType.getDiscountPercent() / 100.0);
-
-        System.out.println("\n=== 결제 내역 ===");
-        basket.showItems();
-        System.out.println("할인 적용 후 금액: W " + discountedPrice);
-        System.out.println("결제가 완료되었습니다. 감사합니다!");
-        basket.clear(); // 결제 후 장바구니 비우기
     }
 }
