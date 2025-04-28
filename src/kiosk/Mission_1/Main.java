@@ -1,4 +1,4 @@
-package kiosk.lv_4;
+package kiosk.Mission_1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +35,8 @@ public class Main {
 
         // Kiosk 실행
         Kiosk kiosk = new Kiosk(menus);
+        Basket basket = new Basket();
+
         kiosk.start();
     }
 }
