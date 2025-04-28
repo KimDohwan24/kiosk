@@ -35,7 +35,6 @@ public class Main {
 
         // Kiosk 실행
         Kiosk kiosk = new Kiosk(menus);
-        Basket basket = new Basket();
 
         kiosk.start();
     }

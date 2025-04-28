@@ -26,19 +26,23 @@ public class Basket {
             return;
         }
         System.out.println("=== 장바구니 목록 ===");
-        for (MenuItem item : items) {
-            System.out.println("- " + item.getName() + ": " + item.getPrice() + "원");
-        }
+        items.stream()
+                .map(items -> " - " + items.getName() + " : " + items.getPrice() + "원")
+                .forEach(System.out::println);
+//        for (MenuItem item : items) {
+//            System.out.println("- " + item.getName() + ": " + item.getPrice() + "원");
+//        }
         System.out.println("총 금액: " + getTotalPrice() + "원");
     }
 
     // 총 가격 계산
     public double getTotalPrice() {
-        double total = 0;
-        for (MenuItem item : items) {
-            total += item.getPrice();
-        }
-        return total;
+        return items.stream()
+                .mapToDouble(MenuItem::getPrice)
+                .sum();
+//        for (MenuItem item : items) {
+//            total += item.getPrice();
+//        }
     }
 
     // 장바구니 비우기
@@ -56,7 +60,6 @@ public class Basket {
 
         System.out.println("=== 결제 내역 ===");
         showItems();
-        System.out.println("결제가 완료되었습니다. 감사합니다!");
         clear(); // 결제 후 장바구니 비우기
     }
 
