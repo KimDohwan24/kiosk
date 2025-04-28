@@ -47,6 +47,7 @@ public class Kiosk {
                 continue;
             }
             if (categoryChoice == -2) {
+                basket.checkout();
                 continue;
             }
             if (categoryChoice < 1 || categoryChoice > menus.size()) {
@@ -96,8 +97,8 @@ public class Kiosk {
             } catch (InputMismatchException e) {
                 System.out.println("잘못 입력했습니다.");
                 scan.nextLine(); // 잘못된 입력을 비워줌
-                continue;
             }
+
         }
     }
 }
