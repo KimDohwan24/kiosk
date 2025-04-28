@@ -1,4 +1,4 @@
-package kiosk.Mission_1;
+package kiosk.mission_1;
 
 public class MenuItem {
     // 속성

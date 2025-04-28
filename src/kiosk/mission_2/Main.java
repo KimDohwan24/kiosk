@@ -1,4 +1,4 @@
-package kiosk.Mission_1;
+package kiosk.mission_2;
 
 import java.util.ArrayList;
 import java.util.List;
