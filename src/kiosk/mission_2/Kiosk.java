@@ -146,7 +146,6 @@ public class Kiosk {
         }catch (InputMismatchException e){
             System.out.println("잘못된 입력입니다. 할인 번호를 다시 입력하세요.");
             scan.nextLine();
-            return; // 잘못된 입력으로 종료
         }
 
     }
