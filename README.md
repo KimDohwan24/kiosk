@@ -1,5 +1,7 @@
 키오스크 제작
+
 필수 
+
 Lv_1 : Main문에 햄버거 메뉴에 등록된 메뉴 선택후 메뉴 출력
 lv_2 : MenuItem에 햄버거 메뉴 List를 관리하고 Menu에서 햄버거 메뉴를 관리, Main문에서 출력을 담당
 lv_3 : Kiosk를 만들어 Main문에선 Kiosk를 실행하면 출력되게 변경
